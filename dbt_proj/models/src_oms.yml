@@ -1,0 +1,13 @@
+sources: 
+  - name: oms
+    database: OMS_DATABASE
+    schema: OMS_SCHEMA
+    tables:
+      - name: cust
+        identifier: customer
+      - name: ordr
+        identifier: orders
+      - name: ordritms
+        identifier: orderitem
+      - name: prod
+        identifier: product

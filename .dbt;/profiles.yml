@@ -1,0 +1,13 @@
+dbt_proj:
+  outputs:
+    dev:
+      account: mmskenx-jt39546
+      database: OMS_DATABASE
+      password: Mira@123
+      role: ACCOUNTADMIN
+      schema: OMS_SCHEMA
+      threads: 1
+      type: snowflake
+      user: ajaykamble4241
+      warehouse: COMPUTE_WH
+  target: dev
