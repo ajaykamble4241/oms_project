@@ -106,7 +106,7 @@ elif menu == "Order Management":
         with st.form("create_order"):
             order_id = st.text_input("Order ID")
             customer_id = st.text_input("Customer ID")
-            order_date = st.st.date_input("Select date", datetime.now())
+            order_date = st.date_input("Select date", datetime.now())
             status = st.selectbox("Select Option of Status", ("Completed", "Pending", "Shipped"))
             submit_button = st.form_submit_button(label="Add Order")
 
