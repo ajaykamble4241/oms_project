@@ -11,9 +11,6 @@ st.title('Order Management System')
 st.markdown(
     """
     <style>
-    .stDeployButton {
-            visibility: hidden;
-        }
     #GithubIcon {
         visibility: hidden;
         }
