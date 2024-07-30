@@ -125,8 +125,8 @@ elif menu == "Order Management":
             st.success(f"Order updated successfully!")
         elif action == "Delete Order":
             with st.form("delete_product"):
-            order_id = st.text_input("Order ID")
-            submit_button = st.form_submit_button(label="Delete Product")
+                order_id = st.text_input("Order ID")
+                submit_button = st.form_submit_button(label="Delete Product")
             if submit_button:
                 delete_product(order_id)
                 st.success(f"Order {order_id} deleted successfully!")
