@@ -11,8 +11,9 @@ st.title('Order Management System')
 st.markdown(
     """
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
+    .stDeployButton {
+            visibility: hidden;
+        }
     </style>
     """,
     unsafe_allow_html=True
