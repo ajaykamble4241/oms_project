@@ -96,6 +96,43 @@ elif menu == "Product Management":
         if submit_button:
             delete_product(product_id)
             st.success(f"Product {product_id} deleted successfully!")
+            
+    elif menu == "Order Management":
+    # Code for Product CRUD operations
+    st.subheader("Manage Orders")
+    action = st.selectbox("Action", ["Place Order", "Update Order", "Delete Order"])
+
+    if action == "Place Order":
+        with st.form("create_order"):
+            order_id = st.text_input("Order ID")
+            customer_id = st.text_input("Customer ID")
+            order_date = st.st.date_input("Select date", datetime.now())
+            status = st.selectbox("Select Option of Status", ("Completed", "Pending", "Shipped"))
+            submit_button = st.form_submit_button(label="Add Product")
+
+        if submit_button:
+            create_order(order_id, customer_id, order_date, status)
+            st.success(f"Product {product_name} added successfully!")
+
+    elif action == "Update Product":
+        with st.form("update_product"):
+            product_id = st.text_input("Product ID")
+            product_name = st.text_input("New Product Name")
+            price = st.number_input("New Price", min_value=0.0, format="%.2f")
+            submit_button = st.form_submit_button(label="Update Product")
+
+        if submit_button:
+            update_product(product_id, product_name, price)
+            st.success(f"Product {product_id} updated successfully!")
+
+    elif action == "Delete Product":
+        with st.form("delete_product"):
+            product_id = st.text_input("Product ID")
+            submit_button = st.form_submit_button(label="Delete Product")
+
+        if submit_button:
+            delete_product(product_id)
+            st.success(f"Product {product_id} deleted successfully!")
 
 
 # Order and Product Reports
