@@ -8,7 +8,15 @@ from models import create_order, update_order, delete_order, add_product, update
 
 # Streamlit app code
 st.title('Order Management System')
-# Button to run DBT models
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # CRUD operations
