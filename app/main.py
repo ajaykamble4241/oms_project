@@ -14,6 +14,9 @@ st.markdown(
     .stDeployButton {
             visibility: hidden;
         }
+    #GithubIcon {
+        visibility: hidden;
+        }
     </style>
     """,
     unsafe_allow_html=True
