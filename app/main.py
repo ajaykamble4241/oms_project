@@ -97,39 +97,39 @@ elif menu == "Product Management":
             delete_product(product_id)
             st.success(f"Product {product_id} deleted successfully!")
             
-    elif menu == "Order Management":
-        # Code for Product CRUD operations
-        st.subheader("Manage Orders")
-        action = st.selectbox("Action", ["Place Order", "Update Order", "Delete Order"])
+elif menu == "Order Management":
+    # Code for Product CRUD operations
+    st.subheader("Manage Orders")
+    action = st.selectbox("Action", ["Place Order", "Update Order", "Delete Order"])
 
-        if action == "Place Order":
-            with st.form("create_order"):
+    if action == "Place Order":
+        with st.form("create_order"):
+            order_id = st.text_input("Order ID")
+            customer_id = st.text_input("Customer ID")
+            order_date = st.st.date_input("Select date", datetime.now())
+            status = st.selectbox("Select Option of Status", ("Completed", "Pending", "Shipped"))
+            submit_button = st.form_submit_button(label="Add Order")
+
+        if submit_button:
+            create_order(order_id, customer_id, order_date, status)
+            st.success(f"Order added successfully!")
+        elif action == "Update Order":
+            with st.form("update_product"):
                 order_id = st.text_input("Order ID")
                 customer_id = st.text_input("Customer ID")
                 order_date = st.st.date_input("Select date", datetime.now())
                 status = st.selectbox("Select Option of Status", ("Completed", "Pending", "Shipped"))
                 submit_button = st.form_submit_button(label="Add Order")
-
             if submit_button:
-                create_order(order_id, customer_id, order_date, status)
-                st.success(f"Order added successfully!")
-            elif action == "Update Order":
-                with st.form("update_product"):
-                    order_id = st.text_input("Order ID")
-                    customer_id = st.text_input("Customer ID")
-                    order_date = st.st.date_input("Select date", datetime.now())
-                    status = st.selectbox("Select Option of Status", ("Completed", "Pending", "Shipped"))
-                    submit_button = st.form_submit_button(label="Add Order")
+                update_order(order_id, customer_id, order_date, status)
+                st.success(f"Order updated successfully!")
+        elif action == "Delete Order":
+            with st.form("delete_product"):
+                order_id = st.text_input("Order ID")
+                submit_button = st.form_submit_button(label="Delete Product")
                 if submit_button:
-                    update_order(order_id, customer_id, order_date, status)
-                    st.success(f"Order updated successfully!")
-            elif action == "Delete Order":
-                with st.form("delete_product"):
-                    order_id = st.text_input("Order ID")
-                    submit_button = st.form_submit_button(label="Delete Product")
-                    if submit_button:
-                        delete_product(order_id)
-                        st.success(f"Order {order_id} deleted successfully!")
+                    delete_product(order_id)
+                    st.success(f"Order {order_id} deleted successfully!")
 
 
 # Order and Product Reports
