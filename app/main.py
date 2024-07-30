@@ -120,14 +120,17 @@ elif menu == "Order Management":
             customer_id = st.text_input("Customer ID")
             order_date = st.st.date_input("Select date", datetime.now())
             status = st.selectbox("Select Option of Status", ("Completed", "Pending", "Shipped"))
-            submit_button = st.form_submit_button(label="Add Order")
+            submit_button = st.form_submit_button(label="Update Order")
+            
         if submit_button:
             update_order(order_id, customer_id, order_date, status)
             st.success(f"Order updated successfully!")
+            
     elif action == "Delete Order":
         with st.form("delete_product"):
                 order_id = st.text_input("Order ID")
-                submit_button = st.form_submit_button(label="Delete Product")
+                submit_button = st.form_submit_button(label="Delete Order")
+            
         if submit_button:
                 delete_product(order_id)
                 st.success(f"Order {order_id} deleted successfully!")
