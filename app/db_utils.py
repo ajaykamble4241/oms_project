@@ -52,19 +52,19 @@ def fetch_order_items():
 # CRUD operations
 def create_order_db(order_id, customer_id, order_date, status):
     conn = get_connection()
-    query = f"INSERT INTO ORDER (order_id, customer_id, order_date, status) VALUES ('{order_id}', '{customer_id}', '{order_date}', '{status}')"
+    query = f"INSERT INTO ORDERS (order_id, customer_id, order_date, status) VALUES ('{order_id}', '{customer_id}', '{order_date}', '{status}')"
     conn.cursor().execute(query)
     conn.close()
 
 def update_order_db(order_id, customer_id, order_date, status):
     conn = get_connection()
-    query = f"UPDATE ORDER SET customer_id='{customer_id}', order_date='{order_date}', status='{status}' WHERE order_id='{order_id}'"
+    query = f"UPDATE ORDERS SET customer_id='{customer_id}', order_date='{order_date}', status='{status}' WHERE order_id='{order_id}'"
     conn.cursor().execute(query)
     conn.close()
 
 def delete_order_db(order_id):
     conn = get_connection()
-    query = f"DELETE FROM ORDER WHERE order_id='{order_id}'"
+    query = f"DELETE FROM ORDERS WHERE order_id='{order_id}'"
     conn.cursor().execute(query)
     conn.close()
 
